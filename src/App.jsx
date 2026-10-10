@@ -7,7 +7,6 @@ import {
   Target,
   BookOpen,
   ChartNoAxesColumnIncreasing,
-  Leaf,
   Settings2,
   Image as ImageIcon,
 } from 'lucide-react'
@@ -50,7 +49,7 @@ const capabilities = [
     description: 'Keep upcoming bills and income in view.',
   },
   {
-    icon: Leaf,
+    icon: Target,
     title: 'Forecast',
     description: 'See how your money may flow in the weeks ahead.',
   },
@@ -76,11 +75,48 @@ function AssetPlaceholder({ label, className = '' }) {
   )
 }
 
+function FooterLogo() {
+  return (
+    <Link
+      to="/"
+      className="bh-footer-brand"
+      aria-label="Beacon — Home"
+      style={{ textDecoration: 'none' }}
+    >
+      <span
+        aria-hidden="true"
+        style={{
+          position: 'relative',
+          display: 'inline-block',
+          width: '28px',
+          height: '28px',
+          overflow: 'hidden',
+          flexShrink: 0,
+        }}
+      >
+        <img
+          src="/images/beacon/beacon_logo_official.png"
+          alt=""
+          style={{
+            position: 'absolute',
+            width: '70px',
+            height: '46.667px',
+            maxWidth: 'none',
+            left: '-21px',
+            top: '-2.9px',
+            display: 'block',
+          }}
+        />
+      </span>
+      <span>Beacon</span>
+    </Link>
+  )
+}
+
 function Home() {
   return (
     <main className="beacon-home">
-
-      {/* APPROVED, LOCKED HERO */}
+      {/* APPROVED HERO */}
       <section className="bh-hero">
         <div className="bh-container bh-hero-grid">
           <div className="bh-hero-copy">
@@ -145,7 +181,7 @@ function Home() {
         </div>
       </section>
 
-      {/* FAMILY STORY — REAL ASSET */}
+      {/* FAMILY STORY */}
       <section className="bh-story">
         <div className="bh-story-grid">
           <div
@@ -171,9 +207,7 @@ function Home() {
           </div>
 
           <div className="bh-story-content">
-            <p className="bh-eyebrow">
-              BUILT FOR REAL LIFE
-            </p>
+            <p className="bh-eyebrow">BUILT FOR REAL LIFE</p>
 
             <h2>It started with my own family.</h2>
 
@@ -274,7 +308,6 @@ function Home() {
 
             <div>
               <h3>Actively in development</h3>
-
               <p>
                 Real-world use, real feedback, and a
                 long-term commitment to making Beacon better.
@@ -321,13 +354,10 @@ function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* FOOTER — OFFICIAL BEACON COMPASS */}
       <footer className="bh-footer">
         <div className="bh-container bh-footer-inner">
-          <div className="bh-footer-brand">
-            <Leaf size={20} />
-            <span>Beacon</span>
-          </div>
+          <FooterLogo />
 
           <p>
             Independently developed. Built for real life.
@@ -340,7 +370,6 @@ function Home() {
           </div>
         </div>
       </footer>
-
     </main>
   )
 }
@@ -351,6 +380,7 @@ function ComingSoon({ title }) {
       <p className="bh-eyebrow">BEACON</p>
       <h1>{title}</h1>
       <p>This page is being developed.</p>
+
       <Link to="/" className="bh-inline-link">
         Return home <ArrowRight size={16} />
       </Link>
