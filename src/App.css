@@ -1,7 +1,7 @@
 
 /* ==================================================
    BEACON MARKETING WEBSITE
-   HOMEPAGE V1 — SOFT CREAM HERO
+   HOMEPAGE V1 — CLOSING LANDSCAPE INTEGRATION
    ================================================== */
 
 .beacon-home {
@@ -137,7 +137,7 @@
 }
 
 /* ==================================================
-   HERO — PHOTO + FEATHERED CREAM GRADIENT
+   HERO — APPROVED AND LOCKED
    ================================================== */
 
 .bh-hero {
@@ -151,14 +151,6 @@
 
   background-color: #f8f5ed;
 
-  /*
-    Layer 1: Feathered cream overlay.
-    Layer 2: Original Beacon hero photograph.
-
-    The left side stays cream.
-    The transition fades gradually into the photograph.
-    No hard panel, border, or visible card edge.
-  */
   background-image:
     linear-gradient(
       90deg,
@@ -195,8 +187,6 @@
   position: relative;
   z-index: 1;
   max-width: 650px;
-
-  /* No box: the cream blur is in the hero background. */
   padding: 0;
   background: transparent;
   border: none;
@@ -221,7 +211,7 @@
 }
 
 /* ==================================================
-   FOUR HIGHLIGHTS
+   FOUR HIGHLIGHTS — APPROVED
    ================================================== */
 
 .bh-highlights-section {
@@ -283,7 +273,7 @@
 }
 
 /* ==================================================
-   FAMILY STORY
+   FAMILY STORY — APPROVED AND LOCKED
    ================================================== */
 
 .bh-story {
@@ -459,7 +449,7 @@
 }
 
 /* ==================================================
-   CLOSING SECTION
+   CLOSING CTA — REAL LANDSCAPE ASSET
    ================================================== */
 
 .bh-closing {
@@ -470,6 +460,13 @@
   color: #fffaf1;
 }
 
+/*
+  The existing placeholder element is used as
+  a decorative background layer.
+
+  No App.jsx changes are required.
+*/
+
 .bh-closing-image {
   position: absolute;
   inset: 0;
@@ -479,7 +476,21 @@
   padding: 0;
   border: 0;
   border-radius: 0;
-  background: linear-gradient(120deg, #334d3e, #747c66);
+
+  background-color: #273d31;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(15, 37, 28, 0.82) 0%,
+      rgba(15, 37, 28, 0.66) 25%,
+      rgba(15, 37, 28, 0.25) 58%,
+      rgba(15, 37, 28, 0.02) 100%
+    ),
+    url('/images/beacon/beacon_closing_landscape.png');
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .bh-closing-image > * {
@@ -487,14 +498,7 @@
 }
 
 .bh-closing-image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(15, 35, 26, 0.85),
-    rgba(15, 35, 26, 0.25)
-  );
+  display: none;
 }
 
 .bh-closing-content {
@@ -760,6 +764,17 @@
 
   .bh-development-grid > div:first-child {
     grid-column: auto;
+  }
+
+  .bh-closing-image {
+    background-position: 58% center;
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(15, 37, 28, 0.86),
+        rgba(15, 37, 28, 0.38)
+      ),
+      url('/images/beacon/beacon_closing_landscape.png');
   }
 
   .bh-closing-content {

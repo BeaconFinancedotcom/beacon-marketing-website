@@ -79,7 +79,8 @@ function AssetPlaceholder({ label, className = '' }) {
 function Home() {
   return (
     <main className="beacon-home">
-      {/* FULL-WIDTH PHOTO HERO */}
+
+      {/* APPROVED, LOCKED HERO */}
       <section className="bh-hero">
         <div className="bh-container bh-hero-grid">
           <div className="bh-hero-copy">
@@ -106,16 +107,14 @@ function Home() {
                 to="/features"
                 className="bh-button bh-button-primary"
               >
-                Explore Beacon
-                <ArrowRight size={17} />
+                Explore Beacon <ArrowRight size={17} />
               </Link>
 
               <Link
                 to="/how-beacon-works"
                 className="bh-text-link"
               >
-                See how it works
-                <ArrowRight size={16} />
+                See how it works <ArrowRight size={16} />
               </Link>
             </div>
           </div>
@@ -146,13 +145,30 @@ function Home() {
         </div>
       </section>
 
-      {/* FAMILY STORY */}
+      {/* FAMILY STORY — REAL ASSET */}
       <section className="bh-story">
         <div className="bh-story-grid">
-          <AssetPlaceholder
+          <div
             className="bh-story-image"
-            label="Warm Beacon family-story photography"
-          />
+            style={{
+              overflow: 'hidden',
+              position: 'relative',
+            }}
+          >
+            <img
+              src="/images/beacon/beacon_family_story.png"
+              alt="Warm home setting with a Beacon-branded mug, books, and greenery"
+              loading="lazy"
+              style={{
+                width: '100%',
+                height: '100%',
+                minHeight: '285px',
+                display: 'block',
+                objectFit: 'cover',
+                objectPosition: 'center',
+              }}
+            />
+          </div>
 
           <div className="bh-story-content">
             <p className="bh-eyebrow">
@@ -268,7 +284,7 @@ function Home() {
         </div>
       </section>
 
-      {/* CLOSING CALL TO ACTION */}
+      {/* CLOSING CTA */}
       <section className="bh-closing">
         <AssetPlaceholder
           className="bh-closing-image"
@@ -324,6 +340,7 @@ function Home() {
           </div>
         </div>
       </footer>
+
     </main>
   )
 }
@@ -334,7 +351,6 @@ function ComingSoon({ title }) {
       <p className="bh-eyebrow">BEACON</p>
       <h1>{title}</h1>
       <p>This page is being developed.</p>
-
       <Link to="/" className="bh-inline-link">
         Return home <ArrowRight size={16} />
       </Link>
