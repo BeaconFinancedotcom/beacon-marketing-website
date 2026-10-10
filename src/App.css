@@ -1,7 +1,7 @@
 
 /* ==================================================
    BEACON MARKETING WEBSITE
-   HOMEPAGE V1 — CLOSING LANDSCAPE INTEGRATION
+   HOMEPAGE V1 — COMPOSITE HERO IMAGE
    ================================================== */
 
 .beacon-home {
@@ -107,9 +107,7 @@
   text-underline-offset: 4px;
 }
 
-/* ==================================================
-   TEMPORARY IMAGE PLACEHOLDERS
-   ================================================== */
+/* TEMPORARY IMAGE PLACEHOLDERS */
 
 .bh-asset-placeholder {
   display: flex;
@@ -137,7 +135,16 @@
 }
 
 /* ==================================================
-   HERO — APPROVED AND LOCKED
+   HERO — APPROVED LAYOUT
+   ==================================================
+
+   The dashboard is now part of the background photo.
+   No floating laptop-screen overlay is necessary.
+
+   NOTE: The screenshot depicted inside the image is
+   an earlier Beacon dashboard design. It is not a
+   current application UI capture.
+
    ================================================== */
 
 .bh-hero {
@@ -163,7 +170,7 @@
       rgba(248, 245, 237, 0.08) 71%,
       rgba(248, 245, 237, 0) 78%
     ),
-    url('/images/beacon/beacon_hero_background.png');
+    url('/images/beacon/beacon_hero_dashboard.png');
 
   background-size:
     100% 100%,
@@ -211,7 +218,7 @@
 }
 
 /* ==================================================
-   FOUR HIGHLIGHTS — APPROVED
+   FOUR HIGHLIGHTS — LOCKED
    ================================================== */
 
 .bh-highlights-section {
@@ -273,7 +280,7 @@
 }
 
 /* ==================================================
-   FAMILY STORY — APPROVED AND LOCKED
+   FAMILY STORY — LOCKED
    ================================================== */
 
 .bh-story {
@@ -313,7 +320,7 @@
 }
 
 /* ==================================================
-   FINANCIAL PHILOSOPHY
+   FINANCIAL PHILOSOPHY — LOCKED
    ================================================== */
 
 .bh-philosophy {
@@ -388,7 +395,7 @@
 }
 
 /* ==================================================
-   INDEPENDENT DEVELOPMENT
+   INDEPENDENT DEVELOPMENT — LOCKED
    ================================================== */
 
 .bh-development {
@@ -449,7 +456,7 @@
 }
 
 /* ==================================================
-   CLOSING CTA — REAL LANDSCAPE ASSET
+   CLOSING LANDSCAPE — LOCKED
    ================================================== */
 
 .bh-closing {
@@ -459,13 +466,6 @@
   background: #273d31;
   color: #fffaf1;
 }
-
-/*
-  The existing placeholder element is used as
-  a decorative background layer.
-
-  No App.jsx changes are required.
-*/
 
 .bh-closing-image {
   position: absolute;
@@ -536,7 +536,7 @@
 }
 
 /* ==================================================
-   FOOTER
+   FOOTER — LOCKED
    ================================================== */
 
 .bh-footer {
@@ -719,7 +719,7 @@
         rgba(248, 245, 237, 0.72) 58%,
         rgba(248, 245, 237, 0.10) 100%
       ),
-      url('/images/beacon/beacon_hero_background.png');
+      url('/images/beacon/beacon_hero_dashboard.png');
 
     background-size:
       100% 100%,

@@ -116,7 +116,21 @@ function FooterLogo() {
 function Home() {
   return (
     <main className="beacon-home">
-      {/* APPROVED HERO */}
+      {/*
+        APPROVED HERO
+
+        beacon_hero_dashboard.png contains the laptop
+        and earlier Beacon dashboard already aligned
+        in the original photograph.
+
+        Earlier-design status:
+        The dashboard shown in the photograph is an
+        older design reference. Beacon's application
+        navigation has since changed.
+
+        To update the dashboard later, replace the
+        photograph with a newly approved composite.
+      */}
       <section className="bh-hero">
         <div className="bh-container bh-hero-grid">
           <div className="bh-hero-copy">
@@ -181,7 +195,7 @@ function Home() {
         </div>
       </section>
 
-      {/* FAMILY STORY */}
+      {/* FAMILY STORY — LOCKED */}
       <section className="bh-story">
         <div className="bh-story-grid">
           <div
@@ -207,7 +221,9 @@ function Home() {
           </div>
 
           <div className="bh-story-content">
-            <p className="bh-eyebrow">BUILT FOR REAL LIFE</p>
+            <p className="bh-eyebrow">
+              BUILT FOR REAL LIFE
+            </p>
 
             <h2>It started with my own family.</h2>
 
@@ -317,7 +333,7 @@ function Home() {
         </div>
       </section>
 
-      {/* CLOSING CTA */}
+      {/* CLOSING CTA — LOCKED */}
       <section className="bh-closing">
         <AssetPlaceholder
           className="bh-closing-image"
@@ -354,7 +370,7 @@ function Home() {
         </div>
       </section>
 
-      {/* FOOTER — OFFICIAL BEACON COMPASS */}
+      {/* FOOTER — LOCKED */}
       <footer className="bh-footer">
         <div className="bh-container bh-footer-inner">
           <FooterLogo />
