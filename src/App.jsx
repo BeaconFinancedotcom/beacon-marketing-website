@@ -15,10 +15,6 @@ import {
 import Header from './components/Header.jsx'
 import './App.css'
 
-// --------------------------------------------------
-// Homepage content
-// --------------------------------------------------
-
 const highlights = [
   {
     icon: Wallet,
@@ -70,10 +66,6 @@ const capabilities = [
   },
 ]
 
-// --------------------------------------------------
-// Temporary asset placeholder
-// --------------------------------------------------
-
 function AssetPlaceholder({ label, className = '' }) {
   return (
     <div className={`bh-asset-placeholder ${className}`}>
@@ -84,19 +76,12 @@ function AssetPlaceholder({ label, className = '' }) {
   )
 }
 
-// --------------------------------------------------
-// Homepage
-// --------------------------------------------------
-
 function Home() {
   return (
     <main className="beacon-home">
-
-      {/* HERO */}
-
+      {/* FULL-WIDTH PHOTO HERO */}
       <section className="bh-hero">
         <div className="bh-container bh-hero-grid">
-
           <div className="bh-hero-copy">
             <p className="bh-eyebrow">
               A CLEARER FINANCIAL TOMORROW
@@ -134,29 +119,18 @@ function Home() {
               </Link>
             </div>
           </div>
-
-          <AssetPlaceholder
-            className="bh-hero-image"
-            label="Beacon product screenshot / laptop"
-          />
-
         </div>
       </section>
 
       {/* FOUR HIGHLIGHTS */}
-
       <section className="bh-highlights-section">
         <div className="bh-container">
           <div className="bh-highlights">
-
             {highlights.map((item) => {
               const Icon = item.icon
 
               return (
-                <div
-                  className="bh-highlight"
-                  key={item.title}
-                >
+                <div className="bh-highlight" key={item.title}>
                   <div className="bh-highlight-icon">
                     <Icon size={26} strokeWidth={1.9} />
                   </div>
@@ -168,16 +142,13 @@ function Home() {
                 </div>
               )
             })}
-
           </div>
         </div>
       </section>
 
       {/* FAMILY STORY */}
-
       <section className="bh-story">
         <div className="bh-story-grid">
-
           <AssetPlaceholder
             className="bh-story-image"
             label="Warm Beacon family-story photography"
@@ -188,9 +159,7 @@ function Home() {
               BUILT FOR REAL LIFE
             </p>
 
-            <h2>
-              It started with my own family.
-            </h2>
+            <h2>It started with my own family.</h2>
 
             <p>
               Beacon began because I wanted something better
@@ -206,17 +175,13 @@ function Home() {
               confident decisions and build a stronger tomorrow.
             </p>
           </div>
-
         </div>
       </section>
 
-      {/* A DIFFERENT KIND OF FINANCIAL PLATFORM */}
-
+      {/* FINANCIAL PHILOSOPHY */}
       <section className="bh-philosophy">
         <div className="bh-container">
-
           <div className="bh-philosophy-intro">
-
             <div>
               <p className="bh-eyebrow">
                 MORE THAN A BUDGET TRACKER
@@ -235,19 +200,14 @@ function Home() {
               what&apos;s coming next, and helps you understand
               how today&apos;s choices can affect your future.
             </p>
-
           </div>
 
           <div className="bh-capabilities">
-
             {capabilities.map((item) => {
               const Icon = item.icon
 
               return (
-                <div
-                  className="bh-capability"
-                  key={item.title}
-                >
+                <div className="bh-capability" key={item.title}>
                   <div className="bh-capability-icon">
                     <Icon size={25} strokeWidth={1.9} />
                   </div>
@@ -259,16 +219,13 @@ function Home() {
                 </div>
               )
             })}
-
           </div>
         </div>
       </section>
 
       {/* INDEPENDENT DEVELOPMENT */}
-
       <section className="bh-development">
         <div className="bh-container bh-development-grid">
-
           <div>
             <p className="bh-eyebrow">
               INDEPENDENT DEVELOPMENT
@@ -289,12 +246,8 @@ function Home() {
               your finances are continually being added.
             </p>
 
-            <Link
-              to="/about"
-              className="bh-inline-link"
-            >
-              Learn about Beacon
-              <ArrowRight size={16} />
+            <Link to="/about" className="bh-inline-link">
+              Learn about Beacon <ArrowRight size={16} />
             </Link>
           </div>
 
@@ -312,28 +265,22 @@ function Home() {
               </p>
             </div>
           </div>
-
         </div>
       </section>
 
       {/* CLOSING CALL TO ACTION */}
-
       <section className="bh-closing">
-
         <AssetPlaceholder
           className="bh-closing-image"
           label="Scenic Beacon landscape background"
         />
 
         <div className="bh-container bh-closing-content">
-
           <p className="bh-eyebrow">
             A BRIGHTER FINANCIAL TOMORROW
           </p>
 
-          <h2>
-            Ready to explore Beacon?
-          </h2>
+          <h2>Ready to explore Beacon?</h2>
 
           <p>
             Take a closer look at what Beacon can do,
@@ -341,13 +288,11 @@ function Home() {
           </p>
 
           <div className="bh-actions">
-
             <Link
               to="/features"
               className="bh-button bh-button-primary"
             >
-              Explore Features
-              <ArrowRight size={17} />
+              Explore Features <ArrowRight size={17} />
             </Link>
 
             <Link
@@ -356,16 +301,13 @@ function Home() {
             >
               Learn How Beacon Works
             </Link>
-
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-
       <footer className="bh-footer">
         <div className="bh-container bh-footer-inner">
-
           <div className="bh-footer-brand">
             <Leaf size={20} />
             <span>Beacon</span>
@@ -380,47 +322,25 @@ function Home() {
             <Link to="/contact">Contact</Link>
             <Link to="/forge">Forge</Link>
           </div>
-
         </div>
       </footer>
-
     </main>
   )
 }
-
-// --------------------------------------------------
-// Temporary pages for navigation testing
-// --------------------------------------------------
 
 function ComingSoon({ title }) {
   return (
     <main className="bh-placeholder-page">
-
-      <p className="bh-eyebrow">
-        BEACON
-      </p>
-
+      <p className="bh-eyebrow">BEACON</p>
       <h1>{title}</h1>
+      <p>This page is being developed.</p>
 
-      <p>
-        This page is being developed.
-      </p>
-
-      <Link
-        to="/"
-        className="bh-inline-link"
-      >
-        Return home
-        <ArrowRight size={16} />
+      <Link to="/" className="bh-inline-link">
+        Return home <ArrowRight size={16} />
       </Link>
-
     </main>
   )
 }
-
-// --------------------------------------------------
-// Application routes
-// --------------------------------------------------
 
 export default function App() {
   return (
@@ -428,55 +348,16 @@ export default function App() {
       <Header />
 
       <Routes>
-        <Route
-          path="/"
-          element={<Home />}
-        />
-
-        <Route
-          path="/features"
-          element={<ComingSoon title="Features" />}
-        />
-
-        <Route
-          path="/how-beacon-works"
-          element={<ComingSoon title="How Beacon Works" />}
-        />
-
-        <Route
-          path="/education"
-          element={<ComingSoon title="Education" />}
-        />
-
-        <Route
-          path="/downloads"
-          element={<ComingSoon title="Downloads" />}
-        />
-
-        <Route
-          path="/about"
-          element={<ComingSoon title="About Beacon" />}
-        />
-
-        <Route
-          path="/support"
-          element={<ComingSoon title="Support Beacon" />}
-        />
-
-        <Route
-          path="/contact"
-          element={<ComingSoon title="Contact" />}
-        />
-
-        <Route
-          path="/forge"
-          element={<ComingSoon title="Forge Introduction" />}
-        />
-
-        <Route
-          path="/forge/details"
-          element={<ComingSoon title="Forge Details" />}
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/features" element={<ComingSoon title="Features" />} />
+        <Route path="/how-beacon-works" element={<ComingSoon title="How Beacon Works" />} />
+        <Route path="/education" element={<ComingSoon title="Education" />} />
+        <Route path="/downloads" element={<ComingSoon title="Downloads" />} />
+        <Route path="/about" element={<ComingSoon title="About Beacon" />} />
+        <Route path="/support" element={<ComingSoon title="Support Beacon" />} />
+        <Route path="/contact" element={<ComingSoon title="Contact" />} />
+        <Route path="/forge" element={<ComingSoon title="Forge Introduction" />} />
+        <Route path="/forge/details" element={<ComingSoon title="Forge Details" />} />
       </Routes>
     </>
   )

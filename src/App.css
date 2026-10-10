@@ -1,7 +1,7 @@
 
 /* ==================================================
    BEACON MARKETING WEBSITE
-   HOMEPAGE V1 — REFINED LAYOUT
+   HOMEPAGE V1 — SOFT CREAM HERO
    ================================================== */
 
 .beacon-home {
@@ -81,6 +81,16 @@
   border: 1px solid var(--bh-green-medium);
 }
 
+.bh-button-primary:hover {
+  background: #183e2d;
+}
+
+.bh-button-outline {
+  border: 1px solid #e6ebdf;
+  color: white;
+  background: rgba(0, 0, 0, 0.08);
+}
+
 .bh-text-link,
 .bh-inline-link {
   display: inline-flex;
@@ -127,54 +137,87 @@
 }
 
 /* ==================================================
-   HERO
+   HERO — PHOTO + FEATHERED CREAM GRADIENT
    ================================================== */
 
 .bh-hero {
   position: relative;
-  padding: 65px 0 38px;
-  background: linear-gradient(110deg, #fcf9f0, #e9e9db);
+  display: flex;
+  align-items: center;
+
+  height: clamp(420px, 31vw, 490px);
+  min-height: 420px;
+  padding: 45px 0 65px;
+
+  background-color: #f8f5ed;
+
+  /*
+    Layer 1: Feathered cream overlay.
+    Layer 2: Original Beacon hero photograph.
+
+    The left side stays cream.
+    The transition fades gradually into the photograph.
+    No hard panel, border, or visible card edge.
+  */
+  background-image:
+    linear-gradient(
+      90deg,
+      #f8f5ed 0%,
+      #f8f5ed 31%,
+      rgba(248, 245, 237, 0.98) 42%,
+      rgba(248, 245, 237, 0.90) 48%,
+      rgba(248, 245, 237, 0.68) 55%,
+      rgba(248, 245, 237, 0.35) 63%,
+      rgba(248, 245, 237, 0.08) 71%,
+      rgba(248, 245, 237, 0) 78%
+    ),
+    url('/images/beacon/beacon_hero_background.png');
+
+  background-size:
+    100% 100%,
+    auto 125%;
+
+  background-position:
+    center center,
+    right center;
+
+  background-repeat: no-repeat;
 }
 
 .bh-hero-grid {
   display: grid;
-  grid-template-columns: 1.03fr 1fr;
-  gap: 40px;
+  grid-template-columns: minmax(0, 48%) minmax(0, 52%);
   align-items: center;
-  min-height: 360px;
+  min-height: 0;
 }
 
 .bh-hero-copy {
   position: relative;
   z-index: 1;
+  max-width: 650px;
+
+  /* No box: the cream blur is in the hero background. */
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .bh-hero h1 {
   color: var(--bh-green);
-  font-size: clamp(38px, 4.4vw, 67px);
+  font-size: clamp(39px, 3.65vw, 61px);
   line-height: 1.08;
   margin: 14px 0 20px;
 }
 
 .bh-hero-description {
-  color: #293c32;
-  max-width: 570px;
+  max-width: 535px;
+  color: #26392f;
   font-size: 15px;
   line-height: 1.65;
-}
-
-/*
-   HERO REFINEMENT:
-   Wider, laptop-friendly image proportion.
-   Actual Beacon screenshot will be added later.
-*/
-
-.bh-hero-image {
-  width: 100%;
-  min-width: 0;
-  min-height: 270px;
-  aspect-ratio: 16 / 10;
-  align-self: center;
 }
 
 /* ==================================================
@@ -189,7 +232,7 @@
 
 .bh-highlights {
   position: relative;
-  top: -12px;
+  top: -25px;
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -439,12 +482,6 @@
   background: linear-gradient(120deg, #334d3e, #747c66);
 }
 
-/*
-   CLOSING REFINEMENT:
-   Image placeholder remains as the scenic background
-   layer, but its icon and text are hidden.
-*/
-
 .bh-closing-image > * {
   display: none;
 }
@@ -492,12 +529,6 @@
 .bh-closing .bh-button-primary {
   background: #24533d;
   border-color: #d9e0d3;
-}
-
-.bh-button-outline {
-  border: 1px solid #e6ebdf;
-  color: white;
-  background: rgba(0, 0, 0, 0.08);
 }
 
 /* ==================================================
@@ -574,10 +605,6 @@
     width: min(100% - 60px, 1370px);
   }
 
-  .bh-hero-grid {
-    gap: 25px;
-  }
-
   .bh-highlight {
     padding-inline: 11px;
     gap: 9px;
@@ -598,19 +625,32 @@
 }
 
 @media (max-width: 800px) {
-  .bh-hero-grid,
+  .bh-hero {
+    height: auto;
+    min-height: 520px;
+    padding: 55px 0 70px;
+
+    background-size:
+      100% 100%,
+      auto 115%;
+
+    background-position:
+      center,
+      68% center;
+  }
+
+  .bh-hero-grid {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .bh-hero-copy {
+    max-width: 490px;
+  }
+
   .bh-story-grid,
   .bh-philosophy-intro {
     grid-template-columns: 1fr;
-  }
-
-  .bh-hero {
-    padding-top: 45px;
-  }
-
-  .bh-hero-image {
-    min-height: 240px;
-    aspect-ratio: 16 / 10;
   }
 
   .bh-highlights {
@@ -662,16 +702,36 @@
     width: min(100% - 36px, 1370px);
   }
 
+  .bh-hero {
+    min-height: 600px;
+    padding-top: 40px;
+    align-items: flex-start;
+
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(248, 245, 237, 0.98) 0%,
+        rgba(248, 245, 237, 0.94) 40%,
+        rgba(248, 245, 237, 0.72) 58%,
+        rgba(248, 245, 237, 0.10) 100%
+      ),
+      url('/images/beacon/beacon_hero_background.png');
+
+    background-size:
+      100% 100%,
+      auto 100%;
+
+    background-position:
+      center,
+      70% center;
+  }
+
   .bh-hero h1 {
-    font-size: 40px;
+    font-size: 38px;
   }
 
   .bh-hero-description {
     font-size: 14px;
-  }
-
-  .bh-hero-image {
-    min-height: 190px;
   }
 
   .bh-highlights {
