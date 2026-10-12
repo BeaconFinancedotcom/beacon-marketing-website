@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
@@ -66,9 +65,8 @@ export default function Header() {
 
         <a
           className="header-signin"
-          href="#"
-          onClick={(event) => event.preventDefault()}
-          title="Beacon Web app sign-in is not publicly available yet"
+          href="https://beta.getbeaconfinance.com/login"
+          aria-label="Sign in to Beacon"
         >
           Sign In
           <ArrowUpRight size={14} />
