@@ -1,0 +1,70 @@
+
+/* ==================================================
+   BEACON MARKETING WEBSITE
+   LAPTOP SCREEN — RESTORED BASELINE
+   ================================================== */
+
+.bh-laptop-screen-map {
+  position: absolute;
+  height: 125%;
+  width: auto;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  aspect-ratio: 1648 / 928;
+  max-width: none;
+  display: block;
+  z-index: 1;
+  overflow: visible;
+  pointer-events: none;
+  user-select: none;
+}
+
+.bh-hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.bh-hero-grid {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.bh-hero-grid a {
+  pointer-events: auto;
+}
+
+.bh-preview-caption {
+  position: absolute;
+  right: 4%;
+  bottom: 12%;
+  z-index: 3;
+  padding: 7px 11px;
+  border-radius: 20px;
+  color: #254233;
+  background: rgba(250, 247, 239, 0.94);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 1200px) {
+  .bh-preview-caption {
+    right: 3%;
+    bottom: 12%;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 800px) {
+  .bh-laptop-screen-map,
+  .bh-preview-caption {
+    display: none;
+  }
+}

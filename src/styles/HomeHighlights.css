@@ -1,0 +1,152 @@
+
+/* ==========================================================
+   BEACON MARKETING WEBSITE
+   HOME HIGHLIGHTS — ENLARGED INFORMATION STRIP
+   ==========================================================
+
+   Scope:
+   - Four informational highlights below the homepage hero
+   - No changes to hero, navigation, or lower sections
+
+   ========================================================== */
+
+.bh-highlights-section {
+  padding-bottom: 36px;
+}
+
+.bh-highlights {
+  top: -30px;
+  min-height: 160px;
+  padding: 30px 12px;
+  border-radius: 20px;
+  align-items: stretch;
+}
+
+.bh-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 10px 22px;
+  min-width: 0;
+}
+
+.bh-highlight-icon {
+  width: 68px;
+  height: 68px;
+  flex: 0 0 68px;
+  border-radius: 50%;
+}
+
+.bh-highlight-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.bh-highlight h3 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 9px;
+}
+
+.bh-highlight p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================
+   COMPACT DESKTOP
+   ========================================================== */
+
+@media (max-width: 1250px) {
+  .bh-highlight {
+    gap: 13px;
+    padding-inline: 13px;
+  }
+
+  .bh-highlight-icon {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+  }
+
+  .bh-highlight-icon svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .bh-highlight h3 {
+    font-size: 15px;
+  }
+
+  .bh-highlight p {
+    font-size: 13px;
+  }
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 800px) {
+  .bh-highlights {
+    min-height: 0;
+    padding: 18px 12px;
+  }
+
+  .bh-highlight {
+    padding: 18px 16px;
+    gap: 15px;
+  }
+
+  .bh-highlight-icon {
+    width: 60px;
+    height: 60px;
+    flex-basis: 60px;
+  }
+
+  .bh-highlight h3 {
+    font-size: 16px;
+  }
+
+  .bh-highlight p {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 550px) {
+  .bh-highlights {
+    padding: 10px;
+    border-radius: 17px;
+  }
+
+  .bh-highlight,
+  .bh-highlight:nth-child(2) {
+    padding: 18px 12px;
+    gap: 14px;
+  }
+
+  .bh-highlight-icon {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+  }
+
+  .bh-highlight-icon svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .bh-highlight h3 {
+    font-size: 16px;
+  }
+
+  .bh-highlight p {
+    font-size: 13px;
+  }
+}

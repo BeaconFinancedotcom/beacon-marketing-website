@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
@@ -18,22 +19,45 @@ const navigation = [
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
+  const closeMenu = () => setMenuOpen(false)
+
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link to="/" className="header-brand" onClick={() => setMenuOpen(false)}>
-          <span className="brand-symbol">✦</span>
-          <span>Beacon</span>
+
+        <Link
+          to="/"
+          className="header-brand"
+          onClick={closeMenu}
+          aria-label="Beacon — Home"
+        >
+          <span className="brand-emblem" aria-hidden="true">
+            <img
+              src="/images/beacon/beacon_logo_official.png"
+              alt=""
+              className="brand-emblem-image"
+            />
+          </span>
+
+          <span className="brand-wordmark">
+            Beacon
+          </span>
         </Link>
 
-        <nav className={`header-nav ${menuOpen ? 'is-open' : ''}`} aria-label="Main navigation">
+        <nav
+          className={`header-nav ${menuOpen ? 'is-open' : ''}`}
+          aria-label="Main navigation"
+          id="beacon-main-navigation"
+        >
           {navigation.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
               end={item.path === '/'}
-              onClick={() => setMenuOpen(false)}
-              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              onClick={closeMenu}
+              className={({ isActive }) =>
+                `nav-link ${isActive ? 'active' : ''}`
+              }
             >
               {item.label}
             </NavLink>
@@ -44,20 +68,27 @@ export default function Header() {
           className="header-signin"
           href="#"
           onClick={(event) => event.preventDefault()}
-          title="Beacon Web app sign-in will be connected when publicly available"
+          title="Beacon Web app sign-in is not publicly available yet"
         >
-          Sign In <ArrowUpRight size={14} />
+          Sign In
+          <ArrowUpRight size={14} />
         </a>
 
         <button
           className="mobile-menu-toggle"
           type="button"
-          aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
+          aria-label={
+            menuOpen
+              ? 'Close navigation'
+              : 'Open navigation'
+          }
           aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
+          aria-controls="beacon-main-navigation"
+          onClick={() => setMenuOpen((open) => !open)}
         >
           {menuOpen ? <X size={23} /> : <Menu size={23} />}
         </button>
+
       </div>
     </header>
   )
